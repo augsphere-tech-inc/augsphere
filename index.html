@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AugSphere Technologies</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #1f4037, #99f2c8);
+      color: #fff;
+    }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 5%;
+      background: rgba(0, 0, 0, 0.8);
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+    }
+    header a {
+      color: #fff;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: bold;
+    }
+    .hero {
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+    .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 0.5rem;
+    }
+    .hero p {
+      font-size: 1.2rem;
+    }
+    .btn {
+      background: #ff7f50;
+      color: #fff;
+      padding: 10px 20px;
+      border-radius: 25px;
+      border: none;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+    .btn:hover {
+      background: #ff6347;
+    }
+    .section {
+      padding: 100px 5%;
+      text-align: center;
+    }
+    .section h2 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+    .card {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 2rem;
+      border-radius: 20px;
+      backdrop-filter: blur(10px);
+    }
+    .card i {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+    .service-item {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 1.5rem;
+      border-radius: 15px;
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .service-item:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div>AugSphere Technologies</div>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#products">Products</a>
+      <a href="#services">Services</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div>
+      <h1>Innovative Tech Solutions for a Smarter Future</h1>
+      <p>We build powerful, scalable, and user-friendly software products.</p>
+      <button class="btn">Get Started</button>
+    </div>
+  </section>
+
+  <section id="about" class="section">
+    <h2>About Us</h2>
+    <p>AugSphere Technologies is a leading innovator in tech solutions, providing cutting-edge software products and services designed to empower businesses worldwide. We believe in creating technology that simplifies, accelerates, and transforms everyday operations.</p>
+  </section>
+
+  <section id="products" class="section">
+    <h2>Our Products</h2>
+    <div class="cards">
+      <div class="card">
+        <i class="fas fa-code"></i>
+        <h3>Address Validator API</h3>
+        <p>Quick and accurate address validation powered by real-time data.</p>
+      </div>
+      <div class="card">
+        <i class="fas fa-shield-alt"></i>
+        <h3>Fraud Detection Service</h3>
+        <p>AI-powered risk analysis to prevent fraudulent activities.</p>
+      </div>
+      <div class="card">
+        <i class="fas fa-chart-line"></i>
+        <h3>Analytics Dashboard</h3>
+        <p>Comprehensive data insights for smarter business decisions.</p>
+      </div>
+      <div class="card">
+        <i class="fas fa-cloud"></i>
+        <h3>Cloud Deployment Solutions</h3>
+        <p>Seamless cloud integration and management services.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="services" class="section">
+    <h2>Our Services</h2>
+    <div class="services-grid">
+      <div class="service-item">Custom Software Development</div>
+      <div class="service-item">Cloud Solutions and Deployment</div>
+      <div class="service-item">API Development and Integration</div>
+      <div class="service-item">Technical Consulting and Support</div>
+      <div class="service-item">Data Analytics and Business Intelligence</div>
+      <div class="service-item">Cybersecurity and Compliance</div>
+    </div>
+  </section>
+
+  <section id="contact" class="section">
+    <h2>Contact Us</h2>
+    <p>Get in touch to learn more about our services and products.</p>
+    <p>Email: info@augsphere.io</p>
+  </section>
+
+  <script>
+    document.querySelector('.btn').addEventListener('click', () => {
+      alert('Thank you for your interest! We’ll be in touch soon.');
+    });
+  </script>
+</body>
+</html>
