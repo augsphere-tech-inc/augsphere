@@ -1,17 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="AugSphere Technologies offers innovative and scalable tech solutions.">
+  <meta name="author" content="AugSphere Technologies">
   <title>AugSphere Technologies</title>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
-      background: linear-gradient(135deg, #1f4037, #99f2c8);
-      color: #fff;
+      font-family: 'Inter', sans-serif;
+      background-color: #fff;
+      color: #333;
     }
+
     header {
       display: flex;
       justify-content: space-between;
@@ -23,89 +31,288 @@
       top: 0;
       z-index: 1000;
     }
+
     header a {
       color: #fff;
       text-decoration: none;
       margin: 0 15px;
       font-weight: bold;
     }
+
+    .menu-icon {
+      display: none;
+      font-size: 1.8rem;
+      color: #fff;
+      cursor: pointer;
+      position: absolute;
+      right: 20px; /* Align the icon to the right */
+    }
+
+    .nav-links {
+      display: flex;
+    }
+
+    .nav-links a {
+      display: inline-block;
+    }
+
     .hero {
       height: 100vh;
       display: flex;
       align-items: center;
       justify-content: center;
       text-align: center;
+      background: linear-gradient(135deg, #00FFFF, #1f4037);
     }
+
     .hero h1 {
       font-size: 3rem;
       margin-bottom: 0.5rem;
+      color: #fff;
     }
+
     .hero p {
       font-size: 1.2rem;
-    }
-    .btn {
-      background: #ff7f50;
       color: #fff;
+    }
+
+    .btn {
+      background: #00FFFF;
+      color: #333;
       padding: 10px 20px;
       border-radius: 25px;
       border: none;
       cursor: pointer;
       font-size: 1rem;
     }
+
     .btn:hover {
-      background: #ff6347;
+      background: #00b3b3;
     }
+
     .section {
       padding: 100px 5%;
       text-align: center;
     }
+
     .section h2 {
       font-size: 2.5rem;
       margin-bottom: 1rem;
     }
+
+    .unique-factors {
+      display: flex;
+      justify-content: space-around;
+      margin-top: 2rem;
+      flex-wrap: wrap;
+      gap: 2rem;
+    }
+
+    .factor-card {
+      background: rgba(255, 255, 255, 0.9);
+      padding: 2rem;
+      border-radius: 15px;
+      width: 250px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .factor-card i {
+      font-size: 3rem;
+      color: #06f7f7;
+      margin-bottom: 1rem;
+    }
+
+    .factor-card h4 {
+      font-size: 1.5rem;
+      color: #333;
+      margin-bottom: 1rem;
+    }
+
+    .factor-card p {
+      color: #555;
+      font-size: 1rem;
+    }
+
+    .factor-card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    }
+
     .cards {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 2rem;
       margin-top: 2rem;
     }
+
     .card {
-      background: rgba(255, 255, 255, 0.1);
+      background: #f0f0f0;
       padding: 2rem;
       border-radius: 20px;
       backdrop-filter: blur(10px);
     }
+
     .card i {
       font-size: 3rem;
       margin-bottom: 1rem;
     }
+
     .services-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: 2rem;
       margin-top: 2rem;
     }
+
     .service-item {
-      background: rgba(255, 255, 255, 0.1);
+      background: #f0f0f0;
       padding: 1.5rem;
       border-radius: 15px;
       text-align: center;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
+
     .service-item:hover {
       transform: scale(1.05);
       box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
     }
+
+    .service-icon {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      color: #06f7f7;
+    }
+
+    .bottom-footer {
+      background: rgba(0, 0, 0, 0.8);
+      padding: 1rem 5%;
+      color: #fff;
+      text-align: center;
+    }
+
+    .bottom-footer-content-area {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 2rem;
+    }
+
+    .all-rights-area {
+      display: flex;
+      align-items: center;
+    }
+
+    .all-rights-area img {
+      width: 100px;
+      margin-right: 20px;
+    }
+
+    .terms-navigation {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+
+    .terms-navigation li a {
+      text-decoration: none;
+      color: #fff;
+      font-size: 14px;
+    }
+
+    .terms-navigation li a:hover {
+      color: #00FFFF;
+    }
+
+    
+    /* Update for menu icon and nav links on mobile */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+    position: relative;
+  }
+
+  .menu-icon {
+    display: block;
+    font-size: 2rem;
+    color: #fff;
+    cursor: pointer;
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .nav-links {
+    display: none;
+    width: 200px; /* Set a specific width for the mobile menu */
+    position: absolute;
+    top: 0;
+    right: 0; /* Align the menu to the right */
+    background-color: rgba(0, 0, 0, 0.9); /* Dark background for the menu */
+    height: 100vh; /* Full height */
+    padding-top: 4rem; /* Space from top to start the menu below the header */
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    z-index: 1000;
+  }
+
+  .nav-links.active {
+    display: flex; /* Show the menu when toggled */
+  }
+
+  .nav-links a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 20px;
+    width: 100%;
+    text-align: left;
+    font-weight: bold;
+  }
+
+  .nav-links a:hover {
+    background-color: #00b3b3;
+  }
+
+  /* Footer adjustments for mobile view */
+  .bottom-footer-content-area {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .terms-navigation {
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .all-rights-area {
+    justify-content: center;
+  }
+}
+
+
   </style>
 </head>
+
 <body>
+
   <header>
-    <div>AugSphere Technologies</div>
+    <div style="font-size: 1.5rem; color: #fff;">AugSphere Technologies</div>
     <nav>
-      <a href="#about">About</a>
-      <a href="#products">Products</a>
-      <a href="#services">Services</a>
-      <a href="#contact">Contact</a>
+      <div class="menu-icon" onclick="toggleMenu()">
+        <i class="fas fa-bars"></i>
+      </div>
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#products">Products</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+      </div>
     </nav>
   </header>
 
@@ -119,7 +326,33 @@
 
   <section id="about" class="section">
     <h2>About Us</h2>
-    <p>AugSphere Technologies is a leading innovator in tech solutions, providing cutting-edge software products and services designed to empower businesses worldwide. We believe in creating technology that simplifies, accelerates, and transforms everyday operations.</p>
+    <p>AugSphere Technologies is a leading innovator in the tech solutions space, delivering cutting-edge software products and services designed to empower businesses worldwide. Our mission is to bridge the gap between technology and business, helping companies of all sizes leverage innovative solutions to accelerate growth and streamline operations.</p>
+    <p>We are passionate about creating technology that <strong>simplifies</strong>, <strong>accelerates</strong>, and <strong>transforms</strong> everyday operations. Our solutions are built with a focus on scalability, efficiency, and ease of use, ensuring that businesses can achieve their full potential in an ever-changing digital landscape.</p>
+    <p>At AugSphere Technologies, we believe that <strong>the future of business is powered by intelligent technology</strong>, and we are committed to pushing the boundaries of what’s possible. Our dedicated team of engineers, designers, and strategists work tirelessly to deliver innovative software solutions that not only solve today’s challenges but also prepare businesses for the future.</p>
+
+    <h3>What Sets Us Apart</h3>
+    <div class="unique-factors">
+      <div class="factor-card">
+        <i class="fas fa-users"></i>
+        <h4>Customer-Centric Approach</h4>
+        <p>We understand that each business is unique, and we tailor our solutions to meet the specific needs of our clients, ensuring the highest level of satisfaction and success.</p>
+      </div>
+      <div class="factor-card">
+        <i class="fas fa-microchip"></i>
+        <h4>Cutting-Edge Technology</h4>
+        <p>From AI-powered analytics to advanced cloud solutions, we leverage the latest technologies to deliver the most impactful and forward-thinking products.</p>
+      </div>
+      <div class="factor-card">
+        <i class="fas fa-globe"></i>
+        <h4>Global Impact</h4>
+        <p>Our solutions are designed to serve businesses around the globe, helping them stay competitive, innovative, and agile in an increasingly digital world.</p>
+      </div>
+      <div class="factor-card">
+        <i class="fas fa-shield-alt"></i>
+        <h4>Commitment to Quality</h4>
+        <p>We adhere to the highest standards of software development, ensuring that every product we deliver is robust, secure, and scalable.</p>
+      </div>
+    </div>
   </section>
 
   <section id="products" class="section">
@@ -151,12 +384,30 @@
   <section id="services" class="section">
     <h2>Our Services</h2>
     <div class="services-grid">
-      <div class="service-item">Custom Software Development</div>
-      <div class="service-item">Cloud Solutions and Deployment</div>
-      <div class="service-item">API Development and Integration</div>
-      <div class="service-item">Technical Consulting and Support</div>
-      <div class="service-item">Data Analytics and Business Intelligence</div>
-      <div class="service-item">Cybersecurity and Compliance</div>
+      <div class="service-item">
+        <i class="fas fa-cogs service-icon"></i>
+        <p>Custom Software Development</p>
+      </div>
+      <div class="service-item">
+        <i class="fas fa-cloud service-icon"></i>
+        <p>Cloud Solutions and Deployment</p>
+      </div>
+      <div class="service-item">
+        <i class="fas fa-plug service-icon"></i>
+        <p>API Development and Integration</p>
+      </div>
+      <div class="service-item">
+        <i class="fas fa-headset service-icon"></i>
+        <p>Technical Consulting and Support</p>
+      </div>
+      <div class="service-item">
+        <i class="fas fa-chart-line service-icon"></i>
+        <p>Data Analytics and Business Intelligence</p>
+      </div>
+      <div class="service-item">
+        <i class="fas fa-shield-alt service-icon"></i>
+        <p>Cybersecurity and Compliance</p>
+      </div>
     </div>
   </section>
 
@@ -166,10 +417,46 @@
     <p>Email: info@augsphere.io</p>
   </section>
 
+  <div class="bottom-footer">
+    <div class="bottom-footer-content-area">
+      <div class="all-rights-area">
+        <span>&copy; 2025 AugSphere LLC.,</span>
+      </div>
+      <ul class="terms-navigation">
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">Terms of Service</a></li>
+      </ul>
+    </div>
+  </div>
+
   <script>
+    function toggleMenu() {
+      document.querySelector('.nav-links').classList.toggle('active');
+    }
+
     document.querySelector('.btn').addEventListener('click', () => {
       alert('Thank you for your interest! We’ll be in touch soon.');
     });
+
+    // Toggle menu when clicking the menu icon
+    function toggleMenu() {
+      document.querySelector('.nav-links').classList.toggle('active');
+    }
+
+    // Close menu if clicked outside of it
+    document.addEventListener('click', function (event) {
+      const menu = document.querySelector('.nav-links');
+      const menuIcon = document.querySelector('.menu-icon');
+
+      // Check if the click is outside the menu and menu icon
+      if (!menu.contains(event.target) && !menuIcon.contains(event.target)) {
+        menu.classList.remove('active'); // Close the menu
+      }
+    });
+
+
+
   </script>
 </body>
+
 </html>
